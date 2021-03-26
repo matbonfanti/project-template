@@ -25,7 +25,7 @@ def main():
     parser.add_argument("--header")
     args = parser.parse_args()
     fnames = [fname for fname in sorted(os.listdir(args.directory))
-              if fname not in EXCLUDED]
+              if fname not in EXCLUDED and os.path.splitext(fname)[1] == ".html"]
     header = (args.header if args.header else os.path.basename(args.directory))
     print(INDEX_TEMPLATE_HEADER.format(header))
     for fname in fnames:
