@@ -1,3 +1,7 @@
+
+import os
+import argparse
+
 INDEX_TEMPLATE_HEADER = """
 <html>
 <body>
@@ -5,7 +9,7 @@ INDEX_TEMPLATE_HEADER = """
 <p>
 """
 
-INDEX_TEMPLATE_LINKLINE = "<li><a href={0}>{0}</a></li>"
+INDEX_TEMPLATE_LINKLINE = "<li><a href={1}>{0}</a></li>"
 
 INDEX_TEMPLATE_FINAL = """
 </p>
@@ -14,9 +18,6 @@ INDEX_TEMPLATE_FINAL = """
 """
 
 EXCLUDED = ['index.html']
-
-import os
-import argparse
 
 def main():
     parser = argparse.ArgumentParser()
@@ -28,7 +29,7 @@ def main():
     header = (args.header if args.header else os.path.basename(args.directory))
     print(INDEX_TEMPLATE_HEADER.format(header))
     for fname in fnames:
-       print(INDEX_TEMPLATE_LINKLINE.format(fname))
+       print(INDEX_TEMPLATE_LINKLINE.format(fname, os.path.join(args.directory, fname)))
     print(INDEX_TEMPLATE_FINAL)
 
 if __name__ == '__main__':
