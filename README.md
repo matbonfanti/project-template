@@ -1,4 +1,6 @@
-# pippo
+# template repository for downstream analysis
 
-testo di prova
-per vedere come funziona l'import nel html
+this is a template git repo ready to be cloned and
+used to store the code developed for the TestaLab
+bioinfo downstream analysis
+
