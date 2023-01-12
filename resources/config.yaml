@@ -1,0 +1,8 @@
+
+title: "Project Name"
+
+pages:
+
+  Test Notebook:
+    notebook: "prova.ipynb"
+    description: "This is a test notebook"
