@@ -51,6 +51,6 @@ jobs:
         env:
           REPO: self
           BRANCH: gh-pages
-          FOLDER: pnotebooks-html
+          FOLDER: notebooks-html
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
