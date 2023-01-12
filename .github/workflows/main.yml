@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: publish-html-filesx
+name: publish-html-files
 
 # Controls when the action will run. 
 on:
@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout repo content
         uses: actions/checkout@v2
 
@@ -46,7 +46,12 @@ jobs:
           mkdir notebooks-html/
           mv *.html notebooks-html/
 
-      - name: Deploy
+      # create the index page for gh-pages
+      - name: create index
+        run: python resources/create_notebooks_index.py resources/config.yaml  > notebooks-html/index.html 
+
+      # deploy the html pages to the gh-pages branch
+      - name: deploy
         uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
