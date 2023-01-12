@@ -31,12 +31,18 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8 
+          python-version: 3.9 
 
-      # run the run.py to get the latest data
-      - name: execute py script 
+      # install dependencies to run jupyter nbconvert
+      - name: install dependencies
+        run: python -m pip install --upgrade pip -r resources/requirements.txt
+
+      # nbconvert to create html from the ipynb files
+      - name: run nbconvert
         run: |
-          python scripts/create_notebooks_index.py notebooks > index.html
+          for nb in $(ls *.ipynb)
+             do jupyter nbconvert --to html $nb
+          done
 
       - name: Commit files
         id: commit
