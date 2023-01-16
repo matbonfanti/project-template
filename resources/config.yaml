@@ -1,10 +1,12 @@
 
 title: "Project Name - Long version"
 short_title: "Project"
-subtitle: "Template github repository that can be used e.g. for the publication of the code when submitting a paper. GH Actions are set to: <\br> \
-1) convert the ipynb to html, create an index html page and store all the pages in a separate branch, where they can be published as static website with github pages <\br> \
-2) create a README index file for the repo that contains all the links to the html and ipynb files. <\br> \
-feel free to fork it for "publishing" your own notebooks, and I am obviously open to suggestions for improvements"
+subtitle: |
+   Template github repository that can be used e.g. for the publication of the code when submitting a paper. 
+   GH Actions are set to:
+   1) convert the ipynb to html, create an index html page and store all the pages in a separate branch, where they can be published as static website with github pages
+   2) create a README index file for the repo that contains all the links to the html and ipynb files.
+   Feel free to fork it for "publishing" your own notebooks, and I am obviously open to suggestions for improvements.
 
 pages:
 
