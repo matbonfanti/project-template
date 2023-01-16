@@ -1,8 +1,10 @@
 
-title: "Project Name"
+title: "Project Name - Long version"
+short_title: "Project"
+subtitle: "Here you can put some general information regarding the project."
 
 pages:
 
   Test Notebook:
     notebook: "prova.ipynb"
-    description: "This is a test notebook"
+    description: "This is a test notebook."

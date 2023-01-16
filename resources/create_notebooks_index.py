@@ -10,13 +10,14 @@ INDEX_TEMPLATE_HEADER = """
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
+    <title>{1}</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <body>
     <main>
-        <h1>{0}</h1>  
+        <h1>{0}</h1>
+        {2}
     <p>
 """
 
@@ -30,8 +31,6 @@ INDEX_TEMPLATE_FINAL = """
 </html>
 """
 
-EXCLUDED = ['index.html']
-
 def main():
 
     parser = argparse.ArgumentParser()
@@ -41,7 +40,7 @@ def main():
     with open(args.configyaml) as f:
       config_dict = yaml.load(f, Loader=yaml.SafeLoader)
 
-    print(INDEX_TEMPLATE_HEADER.format(config_dict["title"]))
+    print(INDEX_TEMPLATE_HEADER.format(config_dict["title"], config_dict["short_title"], config_dict["subtitle"]))
     for k, v in config_dict["pages"].items():
        print(INDEX_TEMPLATE_LINKLINE.format(k, v["notebook"].replace("ipynb", "html"), v["description"]))
     print(INDEX_TEMPLATE_FINAL)
