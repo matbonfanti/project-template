@@ -44,7 +44,8 @@ def main():
     html_subtitle = markdown.markdown(config_dict["subtitle"])
     print(INDEX_TEMPLATE_HEADER.format(config_dict["title"], config_dict["short_title"], html_subtitle))
     for k, v in config_dict["pages"].items():
-       print(INDEX_TEMPLATE_LINKLINE.format(k, v["notebook"].replace("ipynb", "html"), v["description"]))
+       html_description = markdown.markdown(v["description"])
+       print(INDEX_TEMPLATE_LINKLINE.format(k, v["notebook"].replace("ipynb", "html"), html_description))
     print(INDEX_TEMPLATE_FINAL)
 
 if __name__ == '__main__':

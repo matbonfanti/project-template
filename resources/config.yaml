@@ -15,4 +15,12 @@ pages:
 
   Test Notebook:
     notebook: "prova.ipynb"
-    description: "This is a test notebook."
+    description: |
+      This is a **test notebook**. A very basic example of notebook, just to exemplify how the
+      GitHub Actions defined in this repository work.
+      
+      If you want to add your own notebooks, just put the ipynb files in the root project folder and then
+      customize the "pages" section of the [config.yaml](https://github.com/matbonfanti/project-template/blob/main/resources/config.yaml)
+      file by including the notebooks that need to be indexed. The "notebook" attribute defines the name
+      of the ipynb file and the "description" attribute contains a descriptive string that will be
+      included in the README and html index.
