@@ -12,17 +12,22 @@
   <body>
     <main>
         <h1>Project Name - Long version</h1>
-        Template github repository that can be used e.g. for the publication of the code when submitting a paper. 
-
-GH Actions are set to:
-1) convert the ipynb to html, create an index html page and store all the pages in a separate branch, where they can be published as static website with github pages
-2) create a README index file for the repo that contains all the links to the html and ipynb files.
-
-Feel free to fork it for "publishing" your own notebooks, and I am obviously open to suggestions for improvements.
-
+        <p>Template github repository that can be used e.g. for the publication of the code when submitting a paper. </p>
+<p>GH Actions are set to:</p>
+<ol>
+<li>convert the ipynb to html, create an index html page and store all the pages in a separate branch, where they can be published as static website with github pages</li>
+<li>create a README index file for the repo that contains all the links to the html and ipynb files.</li>
+</ol>
+<p>Feel free to fork it for "publishing" your own notebooks, and <a href="mailto:matteo.bonfanti@fht.org">contact me</a> with suggestions for improvements.</p>
     <p>
 
-<h2><a href=prova.html>Test Notebook</a></h2>This is a test notebook.
+<h2><a href=prova.html>Test Notebook</a></h2><p>This is a <strong>test notebook</strong>. A very basic example of notebook, just to exemplify how the
+GitHub Actions defined in this repository work.</p>
+<p>If you want to add your own notebooks, just put the ipynb files in the root project folder and then
+customize the "pages" section of the <a href="https://github.com/matbonfanti/project-template/blob/main/resources/config.yaml">config.yaml</a>
+file by including the notebooks that need to be indexed. The "notebook" attribute defines the name
+of the ipynb file and the "description" attribute contains a descriptive string that will be
+included in the README and html index.</p>
 
     </p>
     </main>
