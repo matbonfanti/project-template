@@ -18,6 +18,32 @@ An html version of the notebooks is accessible [here](https://matbonfanti.github
 
 
 
+## Test Notebook
+
+Links: [jupyter notebook](prova.ipynb) and [html file](https://matbonfanti.github.io/project-template/prova.html).
+
+This is a **test notebook**. A very basic example of notebook, just to exemplify how the
+GitHub Actions defined in this repository work.
+
+If you want to add your own notebooks, just put the ipynb files in the root project folder and then
+customize the "pages" section of the [config.yaml](https://github.com/matbonfanti/project-template/blob/main/resources/config.yaml)
+file by including the notebooks that need to be indexed. The "notebook" attribute defines the name
+of the ipynb file and the "description" attribute contains a descriptive string that will be
+included in the README and html index.
+
+
+
+
+## Test HTML File
+
+Links: [html file](https://matbonfanti.github.io/project-template/prova2.html).
+
+This is a **test HTML file**. This example shows how HTML files can be directly included in the 
+final repository and linked from the repository index.
+
+
+
+
 ---
 *Note: this README file has been generated automatically.* <br>
 *Please do not modify it directly but instead work on [this config file](resources/config.yaml).*
