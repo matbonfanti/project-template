@@ -24,3 +24,9 @@ pages:
       file by including the notebooks that need to be indexed. The "notebook" attribute defines the name
       of the ipynb file and the "description" attribute contains a descriptive string that will be
       included in the README and html index.
+
+  Test HTML File:
+    notebook: "prova2.html"
+    description: |
+      This is a **test HTML file**. This example shows how HTML files can be directly included in the 
+      final repository and linked from the repository index.

@@ -23,6 +23,15 @@ Links: [jupyter notebook]({1}) and [html file]({2}).
 {3}
 """
 
+INDEX_TEMPLATE_LINKLINE_ONLY_HTML = """
+
+## {0}
+
+Links: [html file]({1}).
+
+{2}
+"""
+
 INDEX_TEMPLATE_FINAL = """
 
 ---
@@ -49,8 +58,12 @@ def main():
     print(INDEX_TEMPLATE_HEADER.format(config_dict["short_title"], config_dict["title"], config_dict["subtitle"],
                                        organization_name, repo_name))
     for k, v in config_dict["pages"].items():
-      ghpages_link = "https://{0}.github.io/{1}/{2}".format(organization_name, repo_name, v["notebook"].replace("ipynb", "html"))
-      print(INDEX_TEMPLATE_LINKLINE.format(k, v["notebook"], ghpages_link, v["description"]))
+      if os.path.splitext(v["notebook"])[1] == "ipynb":
+        ghpages_link = "https://{0}.github.io/{1}/{2}".format(organization_name, repo_name, v["notebook"].replace("ipynb", "html"))
+        print(INDEX_TEMPLATE_LINKLINE.format(k, v["notebook"], ghpages_link, v["description"]))
+      elif os.path.splitext(v["notebook"])[1] == "html":
+        ghpages_link = "https://{0}.github.io/{1}/{2}".format(organization_name, repo_name, v["notebook"])
+        print(INDEX_TEMPLATE_LINKLINE_ONLY_HTML.format(k, ghpages_link, v["description"]))        
     print(INDEX_TEMPLATE_FINAL)
 
 if __name__ == '__main__':
