@@ -11,6 +11,10 @@ subtitle: |
    
    Feel free to fork it for "publishing" your own notebooks, and [contact me](mailto:matteo.bonfanti@fht.org) with suggestions for improvements.
 
+final: |
+   Here you can put some final remarks.
+   These will be appended at the end of the README / index page.
+
 pages:
 
   Test Notebook:

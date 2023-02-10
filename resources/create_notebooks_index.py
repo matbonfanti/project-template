@@ -25,6 +25,7 @@ INDEX_TEMPLATE_HEADER = """
 INDEX_TEMPLATE_LINKLINE = "<h2><a href={1}>{0}</a></h2>{2}"
 
 INDEX_TEMPLATE_FINAL = """
+      {0}
     </p>
     </main>
     <script src="index.js"></script>
@@ -46,7 +47,8 @@ def main():
     for k, v in config_dict["pages"].items():
        html_description = markdown.markdown(v["description"])
        print(INDEX_TEMPLATE_LINKLINE.format(k, v["notebook"].replace("ipynb", "html"), html_description))
-    print(INDEX_TEMPLATE_FINAL)
+    html_final = markdown.markdown(config_dict["final"])
+    print(INDEX_TEMPLATE_FINAL.format(html_final))
 
 if __name__ == '__main__':
     main()

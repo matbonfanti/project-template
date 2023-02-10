@@ -33,6 +33,7 @@ Links: [html file]({1}).
 """
 
 INDEX_TEMPLATE_FINAL = """
+{0}
 
 ---
 *Note: this README file has been generated automatically.* <br>
@@ -64,7 +65,7 @@ def main():
       elif os.path.splitext(v["notebook"])[1] == ".html":
         ghpages_link = "https://{0}.github.io/{1}/{2}".format(organization_name, repo_name, v["notebook"])
         print(INDEX_TEMPLATE_LINKLINE_ONLY_HTML.format(k, ghpages_link, v["description"]))        
-    print(INDEX_TEMPLATE_FINAL)
+    print(INDEX_TEMPLATE_FINAL.format(config_dict["final"]))
 
 if __name__ == '__main__':
     main()
