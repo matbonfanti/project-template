@@ -43,6 +43,9 @@ final repository and linked from the repository index.
 
 
 
+Here you can put some final remarks.
+These will be appended at the end of the README / index page.
+
 
 ---
 *Note: this README file has been generated automatically.* <br>
