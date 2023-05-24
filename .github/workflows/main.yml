@@ -49,12 +49,14 @@ jobs:
           for dir in */; do
             # Check if it's a directory (excluding symbolic links)
             if [ -d "$dir" ] && ! [ -L "$dir" ]; then
-              for nb in $(ls $dir/*.ipynb)
-                do jupyter nbconvert --to html $nb
-              done
-              mkdir notebooks-html/$dir/
-              mv $dir/*.html notebooks-html/$dir/
-            fi
+              if ls "$dir"/*.ipynb >/dev/null 2>&1; then
+                for nb in $(ls $dir/*.ipynb)
+                  do jupyter nbconvert --to html $nb
+                done
+                mkdir notebooks-html/$dir/
+                mv $dir/*.html notebooks-html/$dir/
+              fi
+            if
           done
 
       # create the index page for gh-pages
