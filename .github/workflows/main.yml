@@ -56,7 +56,7 @@ jobs:
                 mkdir notebooks-html/$dir/
                 mv $dir/*.html notebooks-html/$dir/
               fi
-            if
+            fi
           done
 
       # create the index page for gh-pages
