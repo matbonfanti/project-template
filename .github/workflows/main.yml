@@ -45,6 +45,17 @@ jobs:
           done
           mkdir notebooks-html/
           mv *.html notebooks-html/
+          
+          for dir in */; do
+            # Check if it's a directory (excluding symbolic links)
+            if [ -d "$dir" ] && ! [ -L "$dir" ]; then
+              for nb in $(ls $dir/*.ipynb)
+                do jupyter nbconvert --to html $nb
+              done
+              mkdir notebooks-html/$dir/
+              mv $dir/*.html notebooks-html/$dir/
+            fi
+          done
 
       # create the index page for gh-pages
       - name: create index
